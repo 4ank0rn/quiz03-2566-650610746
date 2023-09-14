@@ -64,7 +64,7 @@ export const DELETE = async (request) => {
   readDB();
 
   const foundDupe = DB.messages.find((x) => x.messageId === messageId);
-  if (!messageId)
+  if (!foundDupe)
     return NextResponse.json(
       {
         ok: false,
